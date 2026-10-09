@@ -15,10 +15,10 @@ Pexels photo IDs used: 6663044 (hero), 27626186, 28054849, 2476632, 32870,
 
 ## Publishing
 
-GitHub Pages serves from `main`. Before any push someone outside will open, run:
+GitHub Pages serves from `master`. Before any push someone outside will open, run:
 
 ```
-~/dev/bin/pages-fresh ~/dev/projects/changing-places --stamp
+~/dev/bin/pages-fresh ~/dev/changing-places --stamp
 ```
 
 ## Still to come (from Peter)
