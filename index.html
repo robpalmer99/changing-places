@@ -7,206 +7,211 @@
 <meta name="description" content="Fine homes and residences in Pattaya, Pratumnak, Wongamat and Jomtien. Twenty-two years of American brokerage experience, now at home in Thailand.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23101a2b'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%23c49a6c' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23c49a6c' text-anchor='middle'%3ECP%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23f6f3ec'/%3E%3Ccircle cx='32' cy='32' r='29' fill='none' stroke='%232e6f63' stroke-width='3'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%232e6f63' text-anchor='middle'%3ECP%3C/text%3E%3C/svg%3E">
 <style>
   :root {
-    --night: oklch(0.16 0.03 255);
-    --night-2: oklch(0.20 0.035 255);
-    --night-3: oklch(0.27 0.04 255);
-    --ivory: oklch(0.92 0.055 88);
-    --mist: oklch(0.83 0.04 86);
-    --bronze: oklch(0.70 0.085 70);
-    --bronze-deep: oklch(0.58 0.095 60);
-    --pool: oklch(0.72 0.07 200);
-    --serif: "EB Garamond", Georgia, serif;
-    --display: "Marcellus", "Times New Roman", serif;
+    --paper: oklch(0.97 0.012 95);
+    --paper-2: oklch(0.945 0.016 95);
+    --ink: oklch(0.30 0.035 190);
+    --soft: oklch(0.47 0.03 190);
+    --line: oklch(0.88 0.015 120);
+    --palm: oklch(0.46 0.085 175);
+    --palm-deep: oklch(0.37 0.075 180);
+    --palm-wash: oklch(0.93 0.03 175);
+    --clay: oklch(0.60 0.125 45);
+    --clay-wash: oklch(0.94 0.03 55);
+    --sans: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+    --display: "Prata", Georgia, serif;
     --ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
   @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) { color-scheme: dark; }
+    :root:not([data-theme="light"]) { color-scheme: only light; }
   }
-  :root[data-theme="dark"] { color-scheme: dark; }
+  :root[data-theme="dark"] { color-scheme: only light; }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; font-size: 115%; }
   body {
-    background: var(--night);
-    color: var(--ivory);
-    font-family: var(--serif);
-    font-size: 1.0625rem;
-    line-height: 1.75;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1.02rem;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
   img { display: block; width: 100%; height: 100%; object-fit: cover; }
-  a { color: var(--bronze); text-decoration: none; }
-  a:hover { color: var(--ivory); }
+  a { color: var(--palm); text-decoration: none; }
+  a:hover { color: var(--palm-deep); }
 
   .shell { width: min(1180px, 100% - 2rem); margin-inline: auto; }
 
   .label {
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: 0.78rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--bronze);
+    font-size: 0.74rem; font-weight: 600;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--palm);
   }
 
-  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.12; }
-  h2 { font-size: clamp(1.9rem, 1.2rem + 2.6vw, 3.1rem); }
-  h3 { font-size: 1.25rem; letter-spacing: 0.01em; }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.16; }
+  h2 { font-size: clamp(1.8rem, 1.1rem + 2.4vw, 2.9rem); }
+  h3 { font-size: 1.18rem; }
 
-  /* ---------- nav ---------- */
-  header.site {
-    position: absolute; inset: 0 0 auto 0; z-index: 10;
-    padding-block: 1.4rem;
-  }
+  /* ---------- top bar ---------- */
+  header.site { background: var(--paper); border-bottom: 1px solid var(--line); padding-block: 1rem; position: sticky; top: 0; z-index: 20; }
   .nav { display: flex; align-items: center; gap: 2rem; }
-  .mark { display: flex; align-items: center; gap: 0.8rem; color: var(--ivory); }
-  .mark svg { width: 44px; height: 44px; flex: none; }
-  .mark .name { font-family: var(--display); font-size: 1.02rem; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.3; }
-  .mark .name small { display: block; font-size: 0.62rem; letter-spacing: 0.3em; color: var(--mist); }
-  nav.links { margin-left: auto; display: flex; gap: 1.8rem; }
-  nav.links a { font-family: var(--serif); font-size: 0.92rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ivory); opacity: 0.85; }
-  nav.links a:hover { color: var(--bronze); opacity: 1; }
-  @media (max-width: 760px) { nav.links { display: none; } }
-
-  /* ---------- hero ---------- */
-  .hero { position: relative; min-height: 92svh; display: flex; align-items: flex-end; isolation: isolate; }
-  .hero .bg { position: absolute; inset: 0; z-index: -2; }
-  .hero::after {
-    content: ""; position: absolute; inset: 0; z-index: -1;
-    background:
-      linear-gradient(to right, oklch(0.14 0.03 255 / 0.78) 0%, oklch(0.14 0.03 255 / 0.45) 42%, oklch(0.14 0.03 255 / 0.08) 72%),
-      linear-gradient(to top, var(--night) 0%, oklch(0.16 0.03 255 / 0.60) 34%, oklch(0.16 0.03 255 / 0.22) 60%, oklch(0.16 0.03 255 / 0.50) 100%);
-  }
-  .hero-inner { padding-block: 0 clamp(3rem, 8vh, 5.5rem); max-width: 42rem; }
-  .motto { font-style: italic; font-size: clamp(1.15rem, 1rem + 0.8vw, 1.5rem); color: var(--bronze); }
-  .hero h1 { font-size: clamp(2.4rem, 1.4rem + 4.6vw, 4.6rem); margin: 0.5rem 0 1.1rem; }
-  .hero p.lede { color: var(--mist); max-width: 34rem; font-size: 1.1rem; }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.9rem; }
+  .wordmark { font-family: var(--display); font-size: 1.12rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); line-height: 1.25; }
+  .wordmark small { display: block; font-family: var(--sans); font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; color: var(--palm); }
+  nav.links { margin-left: auto; display: flex; gap: 1.6rem; align-items: center; }
+  nav.links a { font-size: 0.86rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink); }
+  nav.links a:hover { color: var(--palm); }
+  .nav .btn { padding: 0.55rem 1.1rem; font-size: 0.86rem; }
+  @media (max-width: 860px) { nav.links a:not(.btn) { display: none; } }
 
   .btn {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    font-family: var(--display); font-size: 0.95rem; letter-spacing: 0.08em;
-    padding: 0.95rem 1.7rem; border-radius: 2px; border: 1px solid transparent;
-    transition: background 300ms var(--ease), color 300ms var(--ease), border-color 300ms var(--ease);
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+    font-family: var(--sans); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.03em;
+    padding: 0.85rem 1.5rem; border-radius: 999px; border: 1.5px solid transparent;
+    transition: background 250ms var(--ease), color 250ms var(--ease), border-color 250ms var(--ease);
     cursor: pointer;
   }
-  .btn.primary { background: var(--bronze); color: var(--night); }
-  .btn.primary:hover { background: var(--bronze-deep); color: var(--ivory); }
-  .btn.ghost { border-color: var(--bronze); color: var(--ivory); background: oklch(0.16 0.03 255 / 0.35); }
-  .btn.ghost:hover { background: var(--bronze); color: var(--night); }
+  .btn.primary { background: var(--palm); color: var(--paper); }
+  .btn.primary:hover { background: var(--palm-deep); color: var(--paper); }
+  .btn.ghost { border-color: var(--palm); color: var(--palm); background: transparent; }
+  .btn.ghost:hover { background: var(--palm-wash); color: var(--palm-deep); }
   .btn svg { width: 18px; height: 18px; flex: none; }
-  .btn .sub { font-family: var(--serif); font-size: 0.78rem; letter-spacing: 0.04em; opacity: 0.75; font-style: italic; }
+  .btn .sub { font-weight: 400; font-size: 0.78rem; opacity: 0.8; }
 
-  /* ---------- statement ---------- */
-  .statement { padding-block: clamp(4.5rem, 10vw, 8rem) clamp(3.5rem, 8vw, 6rem); }
-  .statement .shell { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(2rem, 5vw, 5rem); align-items: end; }
-  .statement h2 { max-width: 24ch; }
-  .statement h2 em { font-family: var(--serif); font-style: italic; color: var(--bronze); }
-  .statement aside { color: var(--mist); border-top: 1px solid var(--night-3); padding-top: 1.2rem; font-size: 0.98rem; }
-  .statement aside strong { color: var(--ivory); font-weight: 500; }
-  @media (max-width: 860px) { .statement .shell { grid-template-columns: 1fr; align-items: start; } }
+  /* ---------- hero ---------- */
+  .hero { border-bottom: 1px solid var(--line); }
+  .hero .shell {
+    display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
+    gap: clamp(2rem, 5vw, 4.5rem); align-items: center;
+    padding-block: clamp(2.5rem, 6vw, 5rem);
+  }
+  .hero h1 { font-size: clamp(2.3rem, 1.3rem + 3.8vw, 4rem); margin: 0.7rem 0 1.1rem; }
+  .hero h1 em { font-style: normal; color: var(--palm); }
+  .hero p.lede { color: var(--soft); font-size: 1.12rem; max-width: 32rem; }
+  .hero .cta-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.8rem; }
+  .trust { margin-top: 1.9rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--soft); font-size: 0.92rem; }
+  .trust strong { color: var(--ink); font-weight: 600; }
+  .hero figure { aspect-ratio: 5 / 4; overflow: hidden; border-radius: 6px; }
+  @media (max-width: 860px) {
+    .hero .shell { grid-template-columns: 1fr; }
+    .hero figure { order: -1; aspect-ratio: 16 / 10; margin-top: 1.5rem; }
+  }
 
   /* ---------- residences ---------- */
-  .residences { padding-block: 0 clamp(4rem, 9vw, 7rem); }
-  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.2rem; }
-  .sec-head p { color: var(--mist); font-style: italic; }
-  .grid {
-    display: grid; gap: 1.1rem;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 240px;
+  .residences { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+  .sec-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem; }
+  .sec-head h2 { margin-top: 0.4rem; }
+  .sec-head p { color: var(--soft); }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.55rem; }
+  .badge {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.22rem 0.6rem; border-radius: 999px;
   }
-  .tile { position: relative; overflow: hidden; border-radius: 2px; background: var(--night-2); }
-  .tile.feature { grid-column: span 2; grid-row: span 2; }
-  .tile.wide { grid-column: span 2; }
-  .tile img { transition: transform 1200ms var(--ease); }
-  .tile:hover img { transform: scale(1.04); }
-  .tile .veil {
-    position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end;
-    padding: 1.2rem 1.3rem;
-    text-shadow: 0 1px 14px oklch(0.13 0.03 255 / 0.75);
-    background: linear-gradient(to top, oklch(0.13 0.03 255 / 0.88) 0%, oklch(0.13 0.03 255 / 0.25) 45%, transparent 70%);
+  .badge.quota { background: var(--palm-wash); color: var(--palm-deep); }
+  .badge.reduced { background: var(--clay); color: var(--paper); }
+  .badge.view { background: var(--paper-2); color: var(--soft); }
+
+  .feature-card {
+    display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    background: oklch(0.99 0.006 95); border: 1px solid var(--line); border-radius: 6px;
+    overflow: hidden; margin-bottom: 1.2rem;
   }
-  .tile .label { font-size: 0.68rem; margin-bottom: 0.15rem; }
-  .tile h3 { color: var(--ivory); }
-  .tile .meta { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; color: var(--mist); font-size: 0.88rem; margin-top: 0.2rem; }
-  .tile .price { font-family: var(--display); color: var(--bronze); font-size: 1.05rem; margin-top: 0.3rem; }
-  .tile.feature h3 { font-size: 1.7rem; }
-  .tile.feature .price { font-size: 1.3rem; }
-  @media (max-width: 980px) {
-    .grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 220px; }
+  .feature-card figure { min-height: 360px; }
+  .feature-card .body { padding: clamp(1.4rem, 3vw, 2.4rem); display: flex; flex-direction: column; justify-content: center; }
+  .feature-card h3 { font-size: 1.7rem; margin-bottom: 0.3rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.3rem 1.1rem; color: var(--soft); font-size: 0.92rem; }
+  .price { font-family: var(--display); font-size: 1.35rem; color: var(--ink); margin-top: 0.7rem; }
+  .price .was { font-family: var(--sans); font-size: 0.9rem; color: var(--soft); text-decoration: line-through; margin-right: 0.5rem; }
+  .price .now-tag { font-family: var(--sans); font-size: 0.78rem; font-weight: 600; color: var(--clay); margin-left: 0.4rem; }
+  .feature-card .body p.blurb { color: var(--soft); margin-top: 0.8rem; font-size: 0.97rem; }
+  @media (max-width: 860px) { .feature-card { grid-template-columns: 1fr; } .feature-card figure { min-height: 0; aspect-ratio: 16/10; } }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.2rem; }
+  .card { background: oklch(0.99 0.006 95); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
+  .card figure { aspect-ratio: 3 / 2; overflow: hidden; }
+  .card img { transition: transform 900ms var(--ease); }
+  .card:hover img { transform: scale(1.04); }
+  .card .body { padding: 1.1rem 1.2rem 1.3rem; }
+  .card .area { font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--palm); margin-bottom: 0.2rem; }
+  .grid-note { margin-top: 1.2rem; color: var(--soft); font-size: 0.85rem; font-style: italic; }
+
+  /* ---------- alerts band ---------- */
+  .alerts { position: relative; isolation: isolate; color: var(--paper); }
+  .alerts .bg { position: absolute; inset: 0; z-index: -2; }
+  .alerts::after { content: ""; position: absolute; inset: 0; z-index: -1; background: oklch(0.33 0.07 185 / 0.82); }
+  .alerts .shell { padding-block: clamp(3.5rem, 8vw, 6rem); display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .alerts h2 { color: oklch(0.98 0.01 95); }
+  .alerts p { color: oklch(0.92 0.02 120); max-width: 36rem; margin-top: 0.6rem; }
+  .alerts .label { color: oklch(0.85 0.06 90); }
+  .alert-form { display: flex; gap: 0.6rem; background: oklch(0.99 0.006 95); padding: 0.45rem; border-radius: 999px; }
+  .alert-form input {
+    flex: 1; min-width: 0; border: none; background: transparent; padding: 0.6rem 1rem;
+    font-family: var(--sans); font-size: 1rem; color: var(--ink);
   }
-  @media (max-width: 620px) {
-    .grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
-    .tile.feature, .tile.wide { grid-column: span 1; grid-row: span 1; }
-    .tile.feature { grid-row: span 2; }
-  }
-  .grid-note { margin-top: 1.1rem; color: var(--mist); font-size: 0.85rem; font-style: italic; }
+  .alert-form input:focus { outline: none; }
+  .alert-form .btn { flex: none; }
+  .alert-note { font-size: 0.82rem; font-style: italic; color: oklch(0.88 0.02 120); margin-top: 0.7rem; }
+  @media (max-width: 860px) { .alerts .shell { grid-template-columns: 1fr; } }
 
   /* ---------- story ---------- */
-  .story { background: var(--night-2); padding-block: clamp(4rem, 9vw, 7rem); }
+  .story { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
   .story .shell { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
-  .story figure { position: relative; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 2px; }
-  .story figcaption {
-    position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 1rem;
-    font-size: 0.8rem; font-style: italic; color: var(--mist);
-    background: linear-gradient(to top, oklch(0.13 0.03 255 / 0.85), transparent);
-  }
-  .story h2 { margin: 0.4rem 0 1.1rem; }
-  .story p { color: var(--mist); max-width: 56ch; }
+  .story figure { aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px; position: relative; }
+  .story figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.7rem 1rem; font-size: 0.8rem; font-style: italic; color: oklch(0.97 0.01 95); background: linear-gradient(to top, oklch(0.25 0.04 190 / 0.75), transparent); }
+  .story h2 { margin: 0.4rem 0 1rem; }
+  .story p { color: var(--soft); max-width: 56ch; }
   .story p + p { margin-top: 1rem; }
-  .story p strong { color: var(--ivory); font-weight: 500; }
-  .signoff { margin-top: 1.6rem; font-style: italic; color: var(--bronze); font-size: 1.1rem; }
+  .story p strong { color: var(--ink); font-weight: 600; }
+  .signoff { margin-top: 1.5rem; font-family: var(--display); color: var(--palm); font-size: 1.15rem; }
   @media (max-width: 860px) { .story .shell { grid-template-columns: 1fr; } }
 
   /* ---------- areas ---------- */
-  .areas { padding-block: clamp(3.5rem, 8vw, 6rem); }
+  .areas { background: var(--paper-2); padding-block: clamp(3.5rem, 8vw, 6rem); }
   .areas .shell { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(1.5rem, 4vw, 4rem); }
-  .areas h2 { max-width: 14ch; }
+  .areas h2 { max-width: 16ch; margin-top: 0.4rem; }
   .area-list { list-style: none; columns: 2; gap: 2.5rem; }
-  .area-list li { break-inside: avoid; border-bottom: 1px solid var(--night-3); padding: 0.85rem 0.1rem; }
-  .area-list .where { font-family: var(--display); font-size: 1.1rem; }
-  .area-list .what { color: var(--mist); font-size: 0.92rem; font-style: italic; }
+  .area-list li { break-inside: avoid; border-bottom: 1px solid var(--line); padding: 0.8rem 0.1rem; }
+  .area-list .where { font-family: var(--display); font-size: 1.05rem; }
+  .area-list .what { color: var(--soft); font-size: 0.92rem; }
   @media (max-width: 860px) { .areas .shell { grid-template-columns: 1fr; } .area-list { columns: 1; } }
 
   /* ---------- contact ---------- */
-  .contact { background: var(--night-2); padding-block: clamp(4rem, 9vw, 7rem); }
+  .contact { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
   .contact .shell { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 4.5rem); }
   .contact h2 { margin: 0.4rem 0 0.8rem; }
-  .contact .pitch { color: var(--mist); max-width: 46ch; }
-  .channel { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.8rem; max-width: 26rem; }
-  .quiet-lines { margin-top: 1.6rem; color: var(--mist); font-size: 0.95rem; }
-  .quiet-lines a { color: var(--ivory); border-bottom: 1px solid var(--night-3); }
-  .quiet-lines a:hover { color: var(--bronze); border-color: var(--bronze); }
+  .contact .pitch { color: var(--soft); max-width: 46ch; }
+  .channel { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1.7rem; max-width: 24rem; }
+  .quiet-lines { margin-top: 1.5rem; color: var(--soft); font-size: 0.95rem; }
+  .quiet-lines a { color: var(--ink); border-bottom: 1px solid var(--line); }
+  .quiet-lines a:hover { color: var(--palm); border-color: var(--palm); }
 
-  form.enquiry { background: var(--night); border: 1px solid var(--night-3); border-radius: 2px; padding: clamp(1.4rem, 3vw, 2.2rem); }
-  form.enquiry .label { display: block; margin-bottom: 1.2rem; }
-  .field { margin-bottom: 1.05rem; }
-  .field label { display: block; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--mist); margin-bottom: 0.3rem; }
+  form.enquiry { background: oklch(0.99 0.006 95); border: 1px solid var(--line); border-radius: 6px; padding: clamp(1.4rem, 3vw, 2.2rem); }
+  form.enquiry .label { display: block; margin-bottom: 1.1rem; }
+  .field { margin-bottom: 1rem; }
+  .field label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
   .field input, .field textarea {
-    width: 100%; background: var(--night-2); border: 1px solid var(--night-3); border-radius: 2px;
-    color: var(--ivory); font-family: var(--serif); font-size: 1rem; padding: 0.7rem 0.85rem;
+    width: 100%; background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+    color: var(--ink); font-family: var(--sans); font-size: 1rem; padding: 0.7rem 0.85rem;
   }
-  .field input:focus, .field textarea:focus { outline: 1px solid var(--bronze); border-color: var(--bronze); }
-  form.enquiry .btn { width: 100%; justify-content: center; margin-top: 0.4rem; }
-  .form-note { margin-top: 0.8rem; font-size: 0.8rem; font-style: italic; color: var(--mist); }
+  .field input:focus, .field textarea:focus { outline: 2px solid var(--palm); border-color: var(--palm); }
+  form.enquiry .btn { width: 100%; margin-top: 0.4rem; }
+  .form-note { margin-top: 0.8rem; font-size: 0.8rem; font-style: italic; color: var(--soft); }
   @media (max-width: 860px) { .contact .shell { grid-template-columns: 1fr; } }
 
   /* ---------- footer ---------- */
-  footer.site {
-    padding-block: 2.2rem 2.6rem; border-top: 1px solid var(--night-3);
-    color: var(--mist); font-size: 0.88rem;
-  }
+  footer.site { background: var(--palm-deep); color: oklch(0.9 0.02 120); padding-block: 2.2rem 2.6rem; font-size: 0.88rem; }
   footer .shell { display: flex; flex-wrap: wrap; gap: 0.8rem 2.5rem; align-items: center; }
-  footer .motto { font-size: 0.95rem; }
-  footer .demo-tag { margin-left: auto; font-style: italic; opacity: 0.8; }
+  footer .fm { font-family: var(--display); color: oklch(0.97 0.01 95); }
+  footer .demo-tag { margin-left: auto; font-style: italic; opacity: 0.85; }
+  footer a { color: oklch(0.97 0.01 95); }
   @media (max-width: 700px) { footer .demo-tag { margin-left: 0; } }
 
   /* ---------- reveal motion ---------- */
-  .reveal { opacity: 0; transform: translateY(14px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 650ms var(--ease), transform 650ms var(--ease); }
   .reveal.in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
@@ -218,19 +223,13 @@
 
 <header class="site">
   <div class="shell nav">
-    <a class="mark" href="#top" aria-label="Changing Places Realty home">
-      <svg viewBox="0 0 64 64" aria-hidden="true">
-        <circle cx="32" cy="32" r="30" fill="oklch(0.14 0.03 255)"/>
-        <circle cx="32" cy="32" r="29" fill="none" stroke="oklch(0.70 0.085 70)" stroke-width="1.5"/>
-        <text x="32" y="41" font-family="Marcellus, Georgia, serif" font-size="24" fill="oklch(0.70 0.085 70)" text-anchor="middle">CP</text>
-      </svg>
-      <span class="name">Changing Places<br><small>Real Estate Company</small></span>
-    </a>
+    <a class="wordmark" href="#top">Changing Places<small>Realty · Pattaya</small></a>
     <nav class="links" aria-label="Site">
       <a href="#residences">Residences</a>
       <a href="#story">Our Story</a>
       <a href="#areas">Areas</a>
       <a href="#contact">Contact</a>
+      <a class="btn primary" href="https://wa.me/66800105171" target="_blank" rel="noopener">WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -238,93 +237,117 @@
 <main id="top">
 
   <section class="hero">
-    <div class="bg"><img src="assets/img/hero-dusk-villa.jpg" alt="A private terrace at dusk: marble table set for evening, the pool glowing beside it" fetchpriority="high"></div>
-    <div class="shell hero-inner">
-      <p class="motto reveal">Time for a change.</p>
-      <h1 class="reveal">Fine homes on the Pattaya coast</h1>
-      <p class="lede reveal">Private villas and residences in Pratumnak, Wongamat and Jomtien, found and negotiated for you by a broker with twenty-two years of American experience and a Thai family name on the door.</p>
-      <div class="cta-row reveal">
-        <a class="btn primary" href="https://wa.me/66800105171" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .7-.2 1.3Z"/></svg>
-          WhatsApp us
-        </a>
-        <a class="btn ghost" href="#residences">View residences</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="statement">
     <div class="shell">
-      <h2 class="reveal">Twenty-two years of American real estate, <em>now at home in Pattaya.</em></h2>
-      <aside class="reveal">
-        <strong>Sales from ฿10 million.</strong> We keep our list short and our attention long: a five-mile stretch of coast, a handful of fine properties, and two phone lines that are answered, in <strong>English and in Thai</strong>.
-      </aside>
+      <div>
+        <p class="label reveal">Time for a change</p>
+        <h1 class="reveal">The Pattaya coast, <em>in good hands</em></h1>
+        <p class="lede reveal">Private villas and sea-view residences in Pratumnak, Wongamat and Jomtien, found and negotiated for you by a broker with twenty-two years of American experience and a Thai family name on the door.</p>
+        <div class="cta-row reveal">
+          <a class="btn primary" href="https://wa.me/66800105171" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .7-.2 1.3Z"/></svg>
+            Start on WhatsApp
+          </a>
+          <a class="btn ghost" href="#residences">View residences</a>
+        </div>
+        <p class="trust reveal"><strong>Sales from ฿10 million</strong> · Licensed Thai company · Served in <strong>English and Thai</strong></p>
+      </div>
+      <figure class="reveal"><img src="assets/img/hero-light-villa.jpg" alt="A white villa in full morning sun, palms doubled in the pale blue pool" fetchpriority="high"></figure>
     </div>
   </section>
 
   <section class="residences" id="residences">
     <div class="shell">
       <div class="sec-head reveal">
-        <h2>Residences</h2>
-        <p>A selection from the coast we know best.</p>
+        <div>
+          <p class="label">Residences</p>
+          <h2>A short list, chosen well</h2>
+        </div>
+        <p>From the five miles of coast we know best.</p>
       </div>
-      <div class="grid">
-        <article class="tile feature reveal">
-          <img src="assets/img/villa-infinity.jpg" alt="A three-storey contemporary villa over its own turquoise pool, hills behind" loading="lazy">
-          <div class="veil">
-            <p class="label">Pratumnak Hill</p>
-            <h3>The Hillside Estate</h3>
-            <p class="meta"><span>5 bed</span><span>6 bath</span><span>780 m²</span><span>Private pool</span></p>
-            <p class="price">฿65,000,000</p>
-          </div>
-        </article>
-        <article class="tile reveal">
-          <img src="assets/img/villa-tropical.jpg" alt="Thai pavilion roofs stepping down a green headland to a quiet beach" loading="lazy">
-          <div class="veil">
-            <p class="label">Wongamat</p>
+
+      <article class="feature-card reveal">
+        <figure><img src="assets/img/villa-infinity.jpg" alt="A three-storey contemporary villa over its own turquoise pool, hills behind" loading="lazy"></figure>
+        <div class="body">
+          <div class="badges"><span class="badge view">Private pool</span><span class="badge view">Sea view</span></div>
+          <p class="area label">Pratumnak Hill</p>
+          <h3>The Hillside Estate</h3>
+          <p class="meta"><span>5 bed</span><span>6 bath</span><span>780 m²</span></p>
+          <p class="price">฿65,000,000</p>
+          <p class="blurb">The week's flagship: a modern estate on the quiet hill between the city and Jomtien, with the kind of pool terrace that ends a search.</p>
+        </div>
+      </article>
+
+      <div class="cards">
+        <article class="card reveal">
+          <figure><img src="assets/img/villa-tropical.jpg" alt="Thai pavilion roofs stepping down a green headland to a quiet beach" loading="lazy"></figure>
+          <div class="body">
+            <div class="badges"><span class="badge view">Beachfront</span></div>
+            <p class="area">Wongamat</p>
             <h3>Headland Sea Villa</h3>
             <p class="meta"><span>4 bed</span><span>5 bath</span><span>560 m²</span></p>
             <p class="price">฿38,000,000</p>
           </div>
         </article>
-        <article class="tile reveal">
-          <img src="assets/img/villa-night.jpg" alt="A timber and stone lake house at dusk, lamplight doubled in the pool" loading="lazy">
-          <div class="veil">
-            <p class="label">Mabprachan Lake</p>
+        <article class="card reveal">
+          <figure><img src="assets/img/villa-night.jpg" alt="A timber and stone lake house at dusk, lamplight doubled in the pool" loading="lazy"></figure>
+          <div class="body">
+            <div class="badges"><span class="badge view">Lakefront</span></div>
+            <p class="area">Mabprachan Lake</p>
             <h3>The Lake House</h3>
             <p class="meta"><span>4 bed</span><span>4 bath</span><span>620 m²</span></p>
             <p class="price">฿24,500,000</p>
           </div>
         </article>
-        <article class="tile wide reveal">
-          <img src="assets/img/condo-living.jpg" alt="A beachfront apartment's open living room: brass, marble and evening light" loading="lazy">
-          <div class="veil">
-            <p class="label">Jomtien Beachfront</p>
+        <article class="card reveal">
+          <figure><img src="assets/img/condo-living.jpg" alt="A beachfront apartment's open living room: brass, marble and evening light" loading="lazy"></figure>
+          <div class="body">
+            <div class="badges"><span class="badge reduced">Price reduced</span><span class="badge quota">Foreign quota</span></div>
+            <p class="area">Jomtien Beachfront</p>
             <h3>Shoreline Residence 31st Floor</h3>
-            <p class="meta"><span>3 bed</span><span>3 bath</span><span>210 m²</span><span>Sea view</span></p>
-            <p class="price">฿18,900,000</p>
+            <p class="meta"><span>3 bed</span><span>3 bath</span><span>210 m²</span></p>
+            <p class="price"><span class="was">฿19,900,000</span>฿18,900,000<span class="now-tag">save ฿1M</span></p>
           </div>
         </article>
-        <article class="tile wide reveal">
-          <img src="assets/img/villa-stone.jpg" alt="A stone villa at blue hour, its pool lit from beneath" loading="lazy">
-          <div class="veil">
-            <p class="label">East Pattaya</p>
+        <article class="card reveal">
+          <figure><img src="assets/img/villa-stone.jpg" alt="A stone villa at blue hour, its pool lit from beneath" loading="lazy"></figure>
+          <div class="body">
+            <div class="badges"><span class="badge view">Private pool</span></div>
+            <p class="area">East Pattaya</p>
             <h3>Stonecourt Villa</h3>
             <p class="meta"><span>4 bed</span><span>4 bath</span><span>480 m²</span></p>
             <p class="price">฿16,500,000</p>
           </div>
         </article>
-        <article class="tile wide reveal">
-          <img src="assets/img/condo-tower.jpg" alt="An infinity pool meeting the skyline from a high residence deck" loading="lazy">
-          <div class="veil">
-            <p class="label">Pattaya City</p>
+        <article class="card reveal">
+          <figure><img src="assets/img/condo-tower.jpg" alt="An infinity pool meeting the skyline from a high residence deck" loading="lazy"></figure>
+          <div class="body">
+            <div class="badges"><span class="badge quota">Foreign quota</span><span class="badge view">Pool deck</span></div>
+            <p class="area">Pattaya City</p>
             <h3>Sky Penthouse</h3>
-            <p class="meta"><span>2 bed</span><span>3 bath</span><span>185 m²</span><span>Pool deck</span></p>
+            <p class="meta"><span>2 bed</span><span>3 bath</span><span>185 m²</span></p>
             <p class="price">฿12,800,000</p>
           </div>
         </article>
       </div>
       <p class="grid-note reveal">Demonstration listings, shown to illustrate the finished site. Live inventory follows.</p>
+    </div>
+  </section>
+
+  <section class="alerts">
+    <div class="bg"><img src="assets/img/sea-aerial.jpg" alt="" loading="lazy" aria-hidden="true"></div>
+    <div class="shell">
+      <div>
+        <p class="label reveal">Listing alerts</p>
+        <h2 class="reveal">New listings and price reductions, by email first</h2>
+        <p class="reveal">The best homes on this coast sell before they are widely advertised. Leave your email and we will send new listings and genuine reductions in your price range, before they are promoted anywhere else.</p>
+      </div>
+      <div>
+        <form class="alert-form reveal" action="mailto:pkelly1867@yahoo.com" method="get">
+          <input type="email" name="subject" placeholder="Your email address" aria-label="Your email address" required>
+          <button class="btn primary" type="submit">Get alerts</button>
+        </form>
+        <p class="alert-note reveal">No more than one email a week. Demonstration form for now.</p>
+      </div>
     </div>
   </section>
 
@@ -371,15 +394,15 @@
         <div class="channel reveal">
           <a class="btn primary" href="https://wa.me/66800105171" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .7-.2 1.3Z"/></svg>
-            WhatsApp &nbsp;<span class="sub">English line</span>
+            WhatsApp <span class="sub">English line</span>
           </a>
           <a class="btn ghost" href="https://wa.me/66811163023" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.7-1.3 1.3-1.9 1.4-.5.1-1.1.2-3.4-.7-2.8-1.2-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .2 0 .7-.2 1.3Z"/></svg>
-            WhatsApp &nbsp;<span class="sub">สายภาษาไทย</span>
+            WhatsApp <span class="sub">สายภาษาไทย</span>
           </a>
-          <a class="btn ghost" href="#contact" title="LINE ID coming soon; scan the QR on our card" aria-disabled="true">
+          <a class="btn ghost" href="#contact" title="LINE ID coming soon; scan the QR on our card">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11.1c0 4 3.5 7.3 8.2 8 .3.1.8.2.9.5.1.3 0 .7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.6 8.2-6.1c1.5-1.6 2.2-3.3 2.2-5C22.3 6.6 17.5 3 12 3Zm-3.1 10.5H6.7a.5.5 0 0 1-.5-.5V9.3a.5.5 0 1 1 1 0V12h1.7a.5.5 0 0 1 0 1.1Zm1.9-.4a.5.5 0 0 1-1.1 0V9.3a.5.5 0 1 1 1.1 0v3.8Zm4.6 0a.5.5 0 0 1-.9.3l-2-2.7v2.4a.5.5 0 0 1-1 0V9.3a.5.5 0 0 1 .9-.3l2 2.7V9.3a.5.5 0 0 1 1 0v3.8Zm3.5-2.4a.5.5 0 0 1 0 1.1h-1.7v1h1.7a.5.5 0 0 1 0 1.1h-2.2a.5.5 0 0 1-.5-.5V9.3a.5.5 0 0 1 .5-.5h2.2a.5.5 0 0 1 0 1.1h-1.7v.9h1.7Z"/></svg>
-            Add us on LINE &nbsp;<span class="sub">QR on our card</span>
+            Add us on LINE <span class="sub">QR on our card</span>
           </a>
         </div>
         <p class="quiet-lines reveal">
@@ -413,8 +436,8 @@
 <footer class="site">
   <div class="shell">
     <span>© 2026 Changing Places Real Estate Co. · Pattaya, Thailand</span>
-    <span class="motto">Time for a change.</span>
-    <span class="demo-tag">Demonstration site · changingplacesrealty.com</span>
+    <span class="fm">Time for a change.</span>
+    <span class="demo-tag">Demonstration site · changingplacesrealty.com · <a href="dark.html">dark version</a></span>
   </div>
 </footer>
 
@@ -432,7 +455,7 @@
     }, { threshold: 0.12 });
     var delay = 0;
     document.querySelectorAll('.hero .reveal').forEach(function (el) {
-      el.style.transitionDelay = delay + 'ms'; delay += 120;
+      el.style.transitionDelay = delay + 'ms'; delay += 110;
       requestAnimationFrame(function () { el.classList.add('in'); });
     });
     els.forEach(function (el) { if (!el.closest('.hero')) io.observe(el); });
@@ -440,7 +463,7 @@
 </script>
 
 <!-- pages-fresh:start -->
-<div id="pf-pill" data-build="20261009-115934" style="position:fixed;right:18px;bottom:18px;
+<div id="pf-pill" data-build="20261009-121045" style="position:fixed;right:18px;bottom:18px;
   z-index:2147483000;display:none;background:#FFC72C;color:#1a1708;font-weight:800;
   font-size:14px;line-height:1;padding:13px 20px;border-radius:40px;cursor:pointer;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
