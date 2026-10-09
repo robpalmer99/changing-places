@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Design Directions — Changing Places Realty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: oklch(0.97 0.012 95);
+    --paper-2: oklch(0.945 0.016 95);
+    --ink: oklch(0.30 0.035 190);
+    --soft: oklch(0.47 0.03 190);
+    --line: oklch(0.88 0.015 120);
+    --palm: oklch(0.46 0.085 175);
+    --palm-deep: oklch(0.37 0.075 180);
+    --palm-wash: oklch(0.93 0.03 175);
+    --clay: oklch(0.60 0.125 45);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { font-size: 115%; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+  .wrap{ max-width: 1060px; margin: 0 auto; padding: 0 16px; }
+  header.page{ padding: 3.2rem 0 1rem; }
+  .kicker{
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em;
+    font-size: 0.72rem; color: var(--palm);
+  }
+  h1{ font-family: Prata, serif; font-weight: 400; font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.2; margin: 0.5rem 0 1rem; }
+  .lede{ color: var(--soft); max-width: 46rem; }
+  .lede strong{ color: var(--ink); }
+  h2{
+    font-family: Prata, serif; font-weight: 400; font-size: 1.45rem;
+    margin: 0 0 0.3rem;
+  }
+  .group{ padding: 2.2rem 0 0.6rem; }
+  .group > p{ color: var(--soft); max-width: 44rem; margin-bottom: 1.4rem; }
+  .cards{ display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.3rem; padding-bottom: 1rem; }
+  .cards.four{ grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); } /* 4 cards → 2×2, no orphan row */
+  .card{
+    background: #fff; border: 1px solid var(--line); border-radius: 14px;
+    overflow: hidden; display: flex; flex-direction: column;
+  }
+  .card a.shot{ display: block; position: relative; }
+  .card img{ display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+  .card .body{ padding: 1rem 1.15rem 1.25rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+  .card .where{
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em;
+    font-size: 0.62rem; color: var(--clay);
+  }
+  .card h3{ font-family: Prata, serif; font-weight: 400; font-size: 1.12rem; line-height: 1.3; }
+  .card p{ color: var(--soft); font-size: 0.9rem; line-height: 1.55; flex: 1; }
+  .card .visit{
+    align-self: flex-start; margin-top: 0.4rem;
+    display: inline-block; padding: 0.42rem 1.1rem; border-radius: 999px;
+    background: var(--palm); color: #fff; text-decoration: none;
+    font-weight: 600; font-size: 0.82rem;
+  }
+  .card .visit:hover{ background: var(--palm-deep); }
+  .howto{
+    background: var(--palm-wash); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1.4rem 1.5rem; margin: 1.6rem 0 0.4rem;
+  }
+  .howto h2{ font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .howto ol{ margin: 0.4rem 0 0 1.2rem; color: var(--soft); }
+  .howto li{ margin-bottom: 0.35rem; }
+  .howto li::marker{ color: var(--palm); font-weight: 600; }
+  footer{ padding: 2.5rem 0 3rem; color: var(--soft); font-size: 0.85rem; }
+  footer a{ color: var(--palm); }
+  @media (max-width: 480px){ header.page{ padding-top: 2.2rem; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="page">
+      <div class="kicker">Changing Places Realty · Design direction</div>
+      <h1>Seven property websites worth a scroll</h1>
+      <p class="lede">Peter — these are real estate sites with strong, modern design: four from
+      Pattaya, three national benchmarks. Have a scroll through them together on a laptop or
+      tablet, and <strong>pick the two or three that feel most like the business you want to be</strong>.
+      You don't need to explain why in design terms — "we like this one's photos" or
+      "this one feels too busy" is exactly the feedback we need.</p>
+    </header>
+
+    <section class="group">
+      <h2>Pattaya agencies</h2>
+      <p>Your direct neighbours — what good looks like in this market right now.</p>
+      <div class="cards four">
+        <article class="card">
+          <a class="shot" href="https://pearlpropertythailand.com" target="_blank" rel="noopener"><img src="assets/refs/pearl-property.jpg" alt="Pearl Property Pattaya homepage — aerial coastline photo with a large central search bar" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Pattaya</div>
+            <h3>Pearl Property Pattaya</h3>
+            <p>Bright and friendly. Big coastal photo, one clear search box, gold accents, and
+            proof numbers (clients, properties, years) right up front.</p>
+            <a class="visit" href="https://pearlpropertythailand.com" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+        <article class="card">
+          <a class="shot" href="https://propertyspace.co.th" target="_blank" rel="noopener"><img src="assets/refs/property-space.jpg" alt="PropertySpace homepage — dusk pool villa photo with a dark overlay and search bar" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Pattaya</div>
+            <h3>PropertySpace</h3>
+            <p>Moody and upmarket. A dusk pool-villa photo fills the screen, dark overlay,
+            very little text. Feels like a resort brochure.</p>
+            <a class="visit" href="https://propertyspace.co.th" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+        <article class="card">
+          <a class="shot" href="https://pattayaprestigeproperties.com" target="_blank" rel="noopener"><img src="assets/refs/pattaya-prestige.jpg" alt="Pattaya Prestige Properties homepage — navy and gold palette with serif headline over villa rooftops" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Pattaya</div>
+            <h3>Pattaya Prestige Properties</h3>
+            <p>Navy and gold, elegant serif headlines — the classic "prestige" look, close in
+            spirit to the dark version of your demo site.</p>
+            <a class="visit" href="https://pattayaprestigeproperties.com" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+        <article class="card">
+          <a class="shot" href="https://globaltopgroup.com" target="_blank" rel="noopener"><img src="assets/refs/global-top-group.jpg" alt="Global Top Group homepage — full-screen aerial render of twin towers over Pattaya" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Pattaya · developer</div>
+            <h3>Global Top Group</h3>
+            <p>A developer rather than an agency: one enormous full-screen image, barely any
+            words. Worth seeing how far "let the picture do the talking" can go.</p>
+            <a class="visit" href="https://globaltopgroup.com" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="group">
+      <h2>National benchmarks</h2>
+      <p>Bigger budgets, nationwide reach — useful for seeing what polish looks like, even if the scale is different.</p>
+      <div class="cards">
+        <article class="card">
+          <a class="shot" href="https://www.richmonts.com" target="_blank" rel="noopener"><img src="assets/refs/richmonts.jpg" alt="Richmont's homepage — minimal luxury design, thin serif wordmark over a Bangkok skyline photo" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Bangkok · luxury</div>
+            <h3>Richmont's</h3>
+            <p>The quietest site on the list. Thin elegant lettering, edge-to-edge photography,
+            lots of breathing room. Pure high-end calm.</p>
+            <a class="visit" href="https://www.richmonts.com" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+        <article class="card">
+          <a class="shot" href="https://lazudi.com/th-en" target="_blank" rel="noopener"><img src="assets/refs/lazudi.jpg" alt="Lazudi homepage — modern marketplace design with rounded search tabs over a villa photo" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Thailand-wide</div>
+            <h3>Lazudi</h3>
+            <p>Modern and approachable — rounded corners, soft colours, simple tabs for Buy /
+            Rent / New Homes. Friendly rather than formal.</p>
+            <a class="visit" href="https://lazudi.com/th-en" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+        <article class="card">
+          <a class="shot" href="https://www.fazwaz.com" target="_blank" rel="noopener"><img src="assets/refs/fazwaz-home.jpg" alt="FazWaz homepage — search-first portal design with photo cards for each Thai region" loading="lazy" width="840" height="525"></a>
+          <div class="body">
+            <div class="where">Thailand-wide · has a Pattaya office</div>
+            <h3>FazWaz</h3>
+            <p>The big search-first portal: clean white frame, search box front and centre,
+            photo cards for every region. Built for browsing lots of listings fast.</p>
+            <a class="visit" href="https://www.fazwaz.com" target="_blank" rel="noopener">Visit site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="howto">
+      <h2>What we need from you</h2>
+      <ol>
+        <li>Which <strong>two or three</strong> sites do you both like best overall?</li>
+        <li>For each favourite — what drew you in? The photos, the colours, the calm, the amount of information?</li>
+        <li>Is there anything on any of them you definitely <strong>don't</strong> want?</li>
+      </ol>
+    </section>
+
+    <footer>
+      Prepared by Rob Palmer for Peter · <a href="index.html">back to the demo site</a>
+    </footer>
+  </div>
+<!-- pages-fresh:start -->
+<div id="pf-pill" data-build="20261009-163331" style="position:fixed;right:18px;bottom:18px;
+  z-index:2147483000;display:none;background:#FFC72C;color:#1a1708;font-weight:800;
+  font-size:14px;line-height:1;padding:13px 20px;border-radius:40px;cursor:pointer;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  box-shadow:0 8px 30px rgba(0,0,0,.45)">Updated &mdash; tap to reload</div>
+<script>
+(function(){
+  var el = document.getElementById('pf-pill');
+  if(!el) return;
+  var mine = el.getAttribute('data-build'), stale = false;
+  function check(){
+    fetch('version.json?t=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(v){
+        if(!v || !v.build || v.build === mine) return;
+        stale = true;
+        if(document.visibilityState === 'visible') el.style.display = 'block';
+      })
+      .catch(function(){});
+  }
+  el.addEventListener('click', function(){ location.reload(); });
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState !== 'visible') return;
+    if(stale) location.reload();   // they just came back, so refreshing is safe
+    else check();
+  });
+  check();
+  setInterval(check, 120000);
+})();
+</script>
+<!-- pages-fresh:end -->
+</body>
+</html>

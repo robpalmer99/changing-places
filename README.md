@@ -7,6 +7,10 @@ Demonstration site for Peter Kelly's Pattaya real estate business, built from th
 - `DESIGN.md` — palette, type, layout rules for both designs.
 - `index.html` — the light design, the main demo; no build step.
 - `dark.html` — the original dark design derived from the business card.
+- `inspiration.html` — seven modern Thai real-estate sites (4 Pattaya, 3 national)
+  for Peter and his wife to scroll and pick favourites from; screenshots in
+  `assets/refs/`. Made 2026-10-09 because Peter couldn't articulate a design
+  direction on the discovery call.
 - `assets/img/` — licensed Pexels photography (free for commercial use, no
   attribution required). Placeholder listings only; swap for real inventory photos
   with owner/agent permission before anything goes properly live.
