@@ -99,7 +99,7 @@
   .deliver p{ color: var(--soft); }
 
   /* Nitiya band */
-  .band{ background: var(--palm-deep); color: oklch(0.96 0.012 95); border-bottom: none; }
+  .band{ background-color: var(--palm-deep); color: oklch(0.96 0.012 95); border-bottom: none; }
   .band h2{ color: oklch(0.98 0.01 95); }
   .band .kicker{ color: oklch(0.85 0.06 90); }
   .band p{ color: oklch(0.92 0.02 120); }
@@ -116,6 +116,50 @@
     .price tr{ border-bottom: 1px solid var(--line); padding: 0.6rem 0; }
   }
 
+
+  /* images */
+  .hero-img{ margin-top: 2rem; }
+  .hero-img img{ display: block; width: 100%; height: clamp(220px, 38vw, 420px); object-fit: cover; border-radius: 10px; }
+  .hero-img figcaption, .fig-note{ font-size: 0.78rem; font-style: italic; color: var(--soft); margin-top: 0.5rem; }
+
+  .devices{ position: relative; margin: 1.2rem 0 2.6rem; padding-right: 13%; }
+  .browser{ border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--card); box-shadow: 0 18px 40px -24px oklch(0.30 0.035 190 / 0.45); }
+  .browser .bar{ display: flex; gap: 6px; padding: 8px 10px; border-bottom: 1px solid var(--line); background: var(--paper-2); }
+  .browser .bar i{ width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+  .browser img{ display: block; width: 100%; height: auto; }
+  .phone{ position: absolute; right: 0; bottom: -1.6rem; width: 24%; border: 6px solid var(--ink); border-radius: 22px; overflow: hidden; background: var(--ink); box-shadow: 0 18px 40px -18px oklch(0.30 0.035 190 / 0.6); }
+  .phone img{ display: block; width: 100%; height: auto; border-radius: 15px; }
+
+  .flow{ display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 0.6rem; margin: 1.2rem 0 0.4rem; font-size: 0.8rem; line-height: 1.45; }
+  .flow .arrow{ font-family: Prata, serif; font-size: 1.4rem; color: var(--clay); text-align: center; }
+  .flow .panel{ background: var(--card); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; height: 100%; display: flex; flex-direction: column; }
+  .flow .step{ font-size: 0.64rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--palm); padding: 0.55rem 0.7rem 0; }
+  .flow .who{ display: flex; align-items: center; gap: 0.45rem; padding: 0.5rem 0.7rem; }
+  .flow .who b{ display: block; font-size: 0.78rem; }
+  .flow .who small{ color: var(--soft); font-size: 0.68rem; }
+  .flow .dot{ width: 22px; height: 22px; border-radius: 50%; background: var(--palm); flex: none; }
+  .flow .txt{ padding: 0 0.7rem 0.6rem; color: var(--ink); }
+  .flow .panel img{ display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+  .flow .cta{ margin-top: auto; padding: 0.5rem 0.7rem; font-weight: 600; font-size: 0.74rem; display: flex; justify-content: space-between; align-items: center; background: var(--paper-2); border-top: 1px solid var(--line); }
+  .flow .cta span{ background: var(--palm); color: var(--paper); border-radius: 999px; padding: 0.2rem 0.6rem; }
+  .flow .area{ font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--palm); padding: 0.55rem 0.7rem 0; }
+  .flow .ttl{ font-family: Prata, serif; font-size: 0.98rem; padding: 0.1rem 0.7rem 0; }
+  .flow .pr{ padding: 0.1rem 0.7rem 0.6rem; color: var(--soft); }
+  .flow .chat{ background: oklch(0.93 0.025 120); flex: 1; padding: 0.8rem 0.7rem; display: flex; flex-direction: column; justify-content: flex-end; gap: 0.5rem; min-height: 9rem; }
+  .flow .bubble{ align-self: flex-end; max-width: 92%; background: oklch(0.90 0.08 150); border-radius: 10px 10px 2px 10px; padding: 0.5rem 0.65rem; color: var(--ink); }
+  .flow .bubble.in{ align-self: flex-start; background: var(--card); border-radius: 10px 10px 10px 2px; }
+  .flow .time{ display: block; text-align: right; font-size: 0.62rem; color: var(--soft); margin-top: 0.2rem; }
+  @media (max-width: 760px){
+    .flow{ grid-template-columns: 1fr; }
+    .flow .arrow{ transform: rotate(90deg); }
+    .flow .panel{ max-width: 340px; width: 100%; margin-inline: auto; }
+  }
+
+  .band{ position: relative; isolation: isolate; }
+  .band .bg{ position: absolute; inset: 0; z-index: -2; }
+  .band .bg img{ width: 100%; height: 100%; object-fit: cover; }
+  .band::after{ content: ""; position: absolute; inset: 0; z-index: -1; background: oklch(0.33 0.07 185 / 0.86); }
+
   .sig{ margin-top: 2rem; }
   .sig .contact{ margin-top: 1rem; color: var(--soft); font-size: 0.93rem; }
   footer{ padding: 2rem 0 3rem; color: var(--soft); font-size: 0.82rem; }
@@ -130,6 +174,11 @@
     <p class="byline"><strong>Prepared for Peter and Nitiya Kelly</strong><br>
     <strong>From Rob Palmer</strong> · 15 October 2026</p>
 
+  </div>
+  <div class="wide">
+    <figure class="hero-img">
+      <img src="assets/img/villa-infinity.jpg" alt="A contemporary villa above its own turquoise pool, green hills behind" fetchpriority="high">
+    </figure>
   </div>
 </header>
 
@@ -237,11 +286,42 @@
     <p>Everything you need to go from a Facebook ad to a conversation with a buyer, built and live in about three weeks.</p>
     <ol class="deliver">
       <li><h3>Your website, finished and live</h3>
-        <p>The design you've seen, completed with your real listings, your story and your five areas, and live on changingplacesrealty.com. It's built to be fast on the phones and tablets your buyers browse on in the evening. Listings run from a simple spreadsheet, so adding a property, cutting a price or marking one sold means editing a single row.</p></li>
+        <p>The design you've seen, completed with your real listings, your story and your five areas, and live on changingplacesrealty.com. It's built to be fast on the phones and tablets your buyers browse on in the evening. Listings run from a simple spreadsheet, so adding a property, cutting a price or marking one sold means editing a single row.</p>
+        <div class="devices">
+          <div class="browser"><div class="bar"><i></i><i></i><i></i></div><img src="assets/proposal/demo-desktop.jpg" width="1440" height="900" alt="The Changing Places demo homepage on a desktop screen" loading="lazy"></div>
+          <div class="phone"><img src="assets/proposal/demo-phone.jpg" width="780" height="1688" alt="The same homepage on a phone" loading="lazy"></div>
+        </div></li>
       <li><h3>Words that sell, written by me</h3>
         <p>Every page: the homepage, your story, a short guide to each of your five areas, and the template every listing follows. All of it is written for a wealthy couple deciding whether to trust a new agency with the biggest purchase of their retirement.</p></li>
       <li><h3>A page for every listing ad</h3>
-        <p>When someone clicks your ad for a Pratumnak condo, they land on that condo instead of your homepage. The WhatsApp and LINE buttons open with a message already filled in that names the property, so you know exactly what they're asking about before you reply.</p></li>
+        <p>When someone clicks your ad for a Pratumnak condo, they land on that condo instead of your homepage. The WhatsApp and LINE buttons open with a message already filled in that names the property, so you know exactly what they're asking about before you reply.</p>
+        <div class="flow" aria-label="Illustration: from Facebook ad to listing page to WhatsApp message">
+          <div class="panel">
+            <div class="step">1 · The ad</div>
+            <div class="who"><span class="dot"></span><div><b>Changing Places Realty</b><small>Sponsored</small></div></div>
+            <div class="txt">Sea views from every room, a short walk from Pratumnak's quietest beach.</div>
+            <img src="assets/img/condo-tower.jpg" alt="" loading="lazy">
+            <div class="cta">3 bed · ฿18.9M <span>WhatsApp</span></div>
+          </div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="panel">
+            <div class="step">2 · The listing page</div>
+            <img src="assets/img/condo-living.jpg" alt="" loading="lazy">
+            <div class="area">Pratumnak</div>
+            <div class="ttl">Sea-view residence, 3 bedrooms</div>
+            <div class="pr">฿18,900,000 · 210 m²</div>
+            <div class="cta">Ask about this home <span>WhatsApp</span></div>
+          </div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="panel">
+            <div class="step">3 · The conversation</div>
+            <div class="chat">
+              <div class="bubble">Hi Peter, I saw the Pratumnak sea-view residence (ref CP-104, ฿18.9M). Is it still available?<span class="time">19:42</span></div>
+              <div class="bubble in">It is! Would you like a video walk-through this week?<span class="time">19:44</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="fig-note">Illustration with a placeholder listing. The message in step 3 is filled in for the buyer automatically.</p></li>
       <li><h3>Your first Facebook ads</h3>
         <p>Ad copy for your first three listings, with several versions of each so you can see which one buyers respond to, plus a template for every listing after that. You, or whoever runs your ads, posts them.</p></li>
       <li><h3>Tracking</h3>
@@ -255,6 +335,7 @@
 </section>
 
 <section class="band">
+  <div class="bg" aria-hidden="true"><img src="assets/img/sea-aerial.jpg" alt="" loading="lazy"></div>
   <div class="wrap">
     <span class="kicker">For Nitiya</span>
     <h2>Where your Claude skills come in</h2>
@@ -343,7 +424,7 @@
 </footer>
 
 <!-- pages-fresh:start -->
-<div id="pf-pill" data-build="20261015-160048" style="position:fixed;right:18px;bottom:18px;
+<div id="pf-pill" data-build="20261015-160440" style="position:fixed;right:18px;bottom:18px;
   z-index:2147483000;display:none;background:#FFC72C;color:#1a1708;font-weight:800;
   font-size:14px;line-height:1;padding:13px 20px;border-radius:40px;cursor:pointer;
   font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
