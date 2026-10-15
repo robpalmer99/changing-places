@@ -11,6 +11,9 @@ Demonstration site for Peter Kelly's Pattaya real estate business, built from th
   for Peter and his wife to scroll and pick favourites from; screenshots in
   `assets/refs/`. Made 2026-10-09 because Peter couldn't articulate a design
   direction on the discovery call.
+- `proposal.html` — the $3,000 funnel-build proposal for Peter and Nitiya
+  (2026-10-15), answering "why not build it ourselves with Claude?". Unlinked,
+  noindex.
 - `assets/img/` — licensed Pexels photography (free for commercial use, no
   attribution required). Placeholder listings only; swap for real inventory photos
   with owner/agent permission before anything goes properly live.

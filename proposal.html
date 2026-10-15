@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Proposal — Changing Places Realty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;1,400&family=Sarabun:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: oklch(0.97 0.012 95);
+    --paper-2: oklch(0.945 0.016 95);
+    --ink: oklch(0.30 0.035 190);
+    --soft: oklch(0.47 0.03 190);
+    --line: oklch(0.88 0.015 120);
+    --palm: oklch(0.46 0.085 175);
+    --palm-deep: oklch(0.37 0.075 180);
+    --palm-wash: oklch(0.93 0.03 175);
+    --clay: oklch(0.60 0.125 45);
+    --card: oklch(0.99 0.006 95);
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { font-size: 115%; }
+  body{
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+  .wrap{ max-width: 46rem; margin: 0 auto; padding: 0 16px; }
+  .wide{ max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+  a{ color: var(--palm); }
+  strong{ font-weight: 600; }
+
+  .kicker{
+    font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em;
+    font-size: 0.72rem; color: var(--palm);
+  }
+  header.page{ padding: 3.4rem 0 1.6rem; border-bottom: 1px solid var(--line); }
+  h1{ font-family: Prata, serif; font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1.18; margin: 0.6rem 0 1.2rem; }
+  .byline{ color: var(--soft); font-size: 0.92rem; line-height: 1.6; }
+  .byline strong{ color: var(--ink); }
+
+  h2{ font-family: Prata, serif; font-weight: 400; font-size: clamp(1.4rem, 3.4vw, 1.75rem); line-height: 1.25; margin-bottom: 1rem; }
+  h3{ font-family: Prata, serif; font-weight: 400; font-size: 1.18rem; line-height: 1.3; margin-bottom: 0.35rem; }
+  section{ padding: 2.6rem 0; border-bottom: 1px solid var(--line); }
+  section p + p{ margin-top: 1rem; }
+  section ul, section ol{ padding-left: 1.2rem; }
+  section li + li{ margin-top: 0.55rem; }
+  .lead-in{ margin-top: 1rem; }
+
+  /* Thai summary */
+  .thai{
+    margin-top: 2rem; background: var(--palm-wash); border-radius: 10px;
+    padding: 1.2rem 1.4rem; font-family: Sarabun, "Hanken Grotesk", sans-serif; line-height: 1.8;
+  }
+  .thai .kicker{ font-family: "Hanken Grotesk", sans-serif; display: block; margin-bottom: 0.4rem; }
+  .thai p + p{ margin-top: 0.6rem; }
+
+  /* the money line */
+  .figure{
+    margin: 1.6rem 0 0.4rem; padding: 1.2rem 1.4rem; background: var(--card);
+    border: 1px solid var(--line); border-radius: 10px;
+  }
+  .figure .big{ font-family: Prata, serif; font-size: clamp(1.5rem, 4vw, 2rem); color: var(--palm-deep); line-height: 1.2; }
+  .figure p{ color: var(--soft); font-size: 0.95rem; margin-top: 0.4rem; }
+
+  /* buyer journey */
+  .journey{ list-style: none; padding: 0 !important; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.7rem; margin: 1.6rem 0 1rem; counter-reset: step; }
+  .journey li{
+    margin: 0 !important; counter-increment: step; background: var(--card); border: 1px solid var(--line);
+    border-radius: 10px; padding: 0.9rem 0.9rem 1rem; font-size: 0.9rem; line-height: 1.45;
+  }
+  .journey li::before{
+    content: counter(step); display: block; font-family: Prata, serif; font-size: 1.3rem; color: var(--palm); margin-bottom: 0.3rem;
+  }
+  .journey li.site{ background: var(--paper-2); border-style: dashed; }
+  .journey li.site em{ display: block; margin-top: 0.4rem; font-size: 0.78rem; color: var(--clay); font-style: normal; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+  @media (max-width: 760px){ .journey{ grid-template-columns: 1fr; } }
+
+  /* comparison */
+  .compare{ width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 1.6rem; font-size: 0.9rem; line-height: 1.5; }
+  .compare th, .compare td{ text-align: left; vertical-align: top; padding: 0.75rem 0.85rem; border-bottom: 1px solid var(--line); }
+  .compare thead th{ font-family: Prata, serif; font-weight: 400; font-size: 1rem; border-bottom: 2px solid var(--ink); }
+  .compare tbody th{ font-weight: 600; color: var(--ink); width: 20%; }
+  .compare td{ color: var(--soft); }
+  .compare .us{ background: var(--palm-wash); color: var(--ink); }
+  .compare thead .us{ border-radius: 10px 10px 0 0; color: var(--palm-deep); }
+  @media (max-width: 760px){
+    .compare thead{ display: none; }
+    .compare, .compare tbody, .compare tr, .compare th, .compare td{ display: block; width: 100%; }
+    .compare tr{ border: 1px solid var(--line); border-radius: 10px; margin-bottom: 1rem; overflow: hidden; background: var(--card); }
+    .compare tbody th{ width: 100%; background: var(--paper-2); }
+    .compare td{ border-bottom: 1px solid var(--line); }
+    .compare td::before{ content: attr(data-label); display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--palm); margin-bottom: 0.2rem; }
+    .compare td.us::before{ color: var(--palm-deep); }
+  }
+
+  /* deliverables */
+  .deliver{ list-style: none; padding: 0 !important; margin-top: 1.6rem; counter-reset: d; }
+  .deliver li{ counter-increment: d; position: relative; padding: 0 0 1.3rem 2.6rem; margin: 0 !important; }
+  .deliver li::before{ content: counter(d); position: absolute; left: 0; top: 0.05rem; font-family: Prata, serif; font-size: 1.25rem; color: var(--palm); }
+  .deliver p{ color: var(--soft); }
+
+  /* Nitiya band */
+  .band{ background: var(--palm-deep); color: oklch(0.96 0.012 95); border-bottom: none; }
+  .band h2{ color: oklch(0.98 0.01 95); }
+  .band .kicker{ color: oklch(0.85 0.06 90); }
+  .band p{ color: oklch(0.92 0.02 120); }
+
+  /* price */
+  .price{ width: 100%; border-collapse: collapse; margin-top: 1.4rem; font-size: 0.93rem; line-height: 1.5; }
+  .price th, .price td{ text-align: left; vertical-align: top; padding: 0.8rem 0.6rem; border-bottom: 1px solid var(--line); }
+  .price thead th{ font-weight: 600; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--palm); }
+  .price td.amt{ font-family: Prata, serif; font-size: 1.25rem; white-space: nowrap; color: var(--palm-deep); }
+  @media (max-width: 560px){
+    .price thead{ display: none; }
+    .price tr, .price td{ display: block; }
+    .price td{ border: none; padding: 0.3rem 0; }
+    .price tr{ border-bottom: 1px solid var(--line); padding: 0.6rem 0; }
+  }
+
+  .sig{ margin-top: 2rem; }
+  .sig .contact{ margin-top: 1rem; color: var(--soft); font-size: 0.93rem; }
+  footer{ padding: 2rem 0 3rem; color: var(--soft); font-size: 0.82rem; }
+</style>
+</head>
+<body>
+
+<header class="page">
+  <div class="wrap">
+    <span class="kicker">Changing Places Realty · A proposal</span>
+    <h1>Turning Facebook Ads Into Buyers You Can Talk To</h1>
+    <p class="byline"><strong>Prepared for Peter and Nitiya Kelly</strong><br>
+    <strong>From Rob Palmer</strong> · 15 October 2026</p>
+
+    <div class="thai" lang="th">
+      <span class="kicker">สรุปสั้นๆ สำหรับคุณนิติยา</span>
+      <p>คุณใช้ Claude สร้างเว็บไซต์สวยๆ ได้ด้วยตัวเองจริงๆ แต่เว็บไซต์เป็นเพียงส่วนเล็กๆ ของสิ่งที่ธุรกิจต้องการ สิ่งที่ผมจะสร้างให้คือระบบทั้งหมดที่พาผู้ซื้อชาวต่างชาติจากโฆษณา Facebook มาคุยกับคุณและปีเตอร์ทาง WhatsApp และ LINE ทั้งข้อความขายที่เขียนอย่างมืออาชีพ ระบบวัดผลว่าโฆษณาไหนได้ผล และการติดตามลูกค้า</p>
+      <p>ค่าบริการ 3,000 ดอลลาร์สหรัฐ ราคาเดียวจบ และผมจะตั้งค่า Claude ของคุณให้คุณลงประกาศขายใหม่ได้เองในสไตล์เดียวกับเว็บไซต์ ระบบนี้จะเป็นของคุณและครอบครัวไปอีกหลายปี</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section>
+  <div class="wrap">
+    <p>Peter and Nitiya,</p>
+    <p>Peter tells me you've been wondering why you'd pay me to build your website when you have Claude and could build one yourselves. It's a fair question, and I'd rather answer it properly than skip past it.</p>
+    <p>You could build a good-looking website yourselves. Claude is very capable, and I use it every day. But the website was never the hard part. What your business needs is a steady flow of wealthy, serious buyers starting conversations with you on WhatsApp and LINE. The website is one piece of the system that does that, and it's the easiest piece to build.</p>
+    <p>Everything around it is where a sale is won or lost: the ads, the words that persuade a retired couple in Ohio to message an agency they've never heard of, the tracking that tells you which ad worked, and what happens after they get in touch. That's what I've spent forty years doing, and it's what this proposal covers.</p>
+    <div class="figure">
+      <div class="big">One sale ≈ 300,000 baht</div>
+      <p>A 10 million baht property at a typical 3% commission earns you around 300,000 baht, roughly $9,000. If this system brings you a single buyer you wouldn't otherwise have met, it has paid for itself three times over.</p>
+    </div>
+    <p class="lead-in">Peter told me he's building Changing Places to last, for you, Nitiya, and for your children. I've planned this with that in mind. Everything I build is yours, and it's set up so the two of you can run it yourselves long after I've handed it over.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">From our call</span>
+    <h2>What I heard</h2>
+    <ul>
+      <li>You're focused on high-end sales, 10 million baht and up, within about five miles of Pattaya: Pratumnak, Naklua and Wongamat, Jomtien, East Pattaya and Mabprachan Lake.</li>
+      <li>Nearly all your buyers will be foreigners: American, European and Australian, plus some wealthy Asian buyers. Many are retired or semi-retired couples.</li>
+      <li>You plan to advertise your listings on Facebook, and the one thing you want from every ad is a conversation on WhatsApp or LINE.</li>
+      <li>You bring something rare to Pattaya: Peter's 22 years running a brokerage in the US, and a genuinely bilingual service, with Nitiya on the Thai line and Peter on the English one.</li>
+      <li>The company is newly registered, the Facebook page is still new, and you already own changingplacesrealty.com.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">The honest answer</span>
+    <h2>Can you do this yourselves with Claude?</h2>
+    <p>Some of it, yes, and I'll be straight about which parts.</p>
+    <p>Ask Claude for a real estate website and it will build you one. What it gives a first-time builder is the layout it gives everyone: a big headline in the middle, three boxes with icons, and a contact form. Your buyers have seen that page a thousand times, and it doesn't say "this agency is different".</p>
+    <p>The harder problem is knowing what to ask it for. Claude doesn't know which words make a cautious couple in their sixties trust a new agency with a $300,000 decision. It doesn't know what a listing ad has to say to earn the click, how to tell which ad produced which enquiry, or what to send someone who signed up for alerts and then went quiet. Those answers come from experience. The tool only does as well as the person directing it, the same way you and a chef can own the same knife.</p>
+    <p>Here's the whole journey a buyer takes before they're standing in one of your properties:</p>
+  </div>
+  <div class="wide">
+    <ol class="journey">
+      <li>They see your ad for a property on Facebook.</li>
+      <li class="site">They land on a page about that property.<em>This is the website</em></li>
+      <li>They tap WhatsApp or LINE, or ask for new-listing alerts.</li>
+      <li>They get a quick, warm reply in their own language.</li>
+      <li>They book a viewing, and you take it from there.</li>
+    </ol>
+  </div>
+  <div class="wrap">
+    <p>A website on its own covers step two. This proposal sets up all five.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wide">
+    <span class="kicker">Side by side</span>
+    <h2>Three ways to get there</h2>
+    <table class="compare">
+      <thead>
+        <tr><th></th><th>Build it yourselves with Claude</th><th>Hire a freelancer on Upwork</th><th class="us">Work with me</th></tr>
+      </thead>
+      <tbody>
+        <tr><th>Cost</th>
+          <td data-label="Yourselves">Your subscription, plus weeks of your own time</td>
+          <td data-label="Freelancer">Often $500 to $2,500</td>
+          <td data-label="With me" class="us">$3,000, fixed</td></tr>
+        <tr><th>Who writes the words</th>
+          <td data-label="Yourselves">You, starting from Claude's first draft</td>
+          <td data-label="Freelancer">Usually you. Most freelancers build, they don't write</td>
+          <td data-label="With me" class="us">I do, for this specific buyer</td></tr>
+        <tr><th>How it looks</th>
+          <td data-label="Yourselves">Claude's standard template look</td>
+          <td data-label="Freelancer">A theme they've used before</td>
+          <td data-label="With me" class="us">Designed for your buyers. You've already seen the demo</td></tr>
+        <tr><th>Facebook ads and a page for each listing</th>
+          <td data-label="Yourselves">Up to you to work out</td>
+          <td data-label="Freelancer">Rarely included</td>
+          <td data-label="With me" class="us">Included</td></tr>
+        <tr><th>Knowing which ad brought which buyer</th>
+          <td data-label="Yourselves">Fiddly to set up correctly</td>
+          <td data-label="Freelancer">Sometimes, for an extra fee</td>
+          <td data-label="With me" class="us">Included</td></tr>
+        <tr><th>Follow-up after someone gets in touch</th>
+          <td data-label="Yourselves">Not part of a website</td>
+          <td data-label="Freelancer">Not part of a website</td>
+          <td data-label="With me" class="us">Included</td></tr>
+        <tr><th>Domain, forms, Thai privacy law</th>
+          <td data-label="Yourselves">You learn as you go</td>
+          <td data-label="Freelancer">Usually covered</td>
+          <td data-label="With me" class="us">Included</td></tr>
+        <tr><th>When something breaks</th>
+          <td data-label="Yourselves">You fix it</td>
+          <td data-label="Freelancer">A message to someone in another time zone</td>
+          <td data-label="With me" class="us">I live in Thailand. I'm a WhatsApp message away</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">The plan</span>
+    <h2>What you get</h2>
+    <p>Everything you need to go from a Facebook ad to a conversation with a buyer, built and live in about three weeks.</p>
+    <ol class="deliver">
+      <li><h3>Your website, finished and live</h3>
+        <p>The design you've seen, completed with your real listings, your story and your five areas, and live on changingplacesrealty.com. It's built to be fast on the phones and tablets your buyers browse on in the evening. Listings run from a simple spreadsheet, so adding a property, cutting a price or marking one sold means editing a single row.</p></li>
+      <li><h3>Words that sell, written by me</h3>
+        <p>Every page: the homepage, your story, a short guide to each of your five areas, and the template every listing follows. All of it is written for a wealthy couple deciding whether to trust a new agency with the biggest purchase of their retirement.</p></li>
+      <li><h3>A page for every listing ad</h3>
+        <p>When someone clicks your ad for a Pratumnak condo, they land on that condo instead of your homepage. The WhatsApp and LINE buttons open with a message already filled in that names the property, so you know exactly what they're asking about before you reply.</p></li>
+      <li><h3>Your first Facebook ads</h3>
+        <p>Ad copy for your first three listings, with several versions of each so you can see which one buyers respond to, plus a template for every listing after that. You, or whoever runs your ads, posts them.</p></li>
+      <li><h3>Tracking</h3>
+        <p>The Meta pixel and conversion tracking, set up so Facebook learns what kind of person messages you and finds more of them, and so you can see which ad brought in which enquiry.</p></li>
+      <li><h3>Follow-up</h3>
+        <p>A new-listing alert sign-up connected to a free email tool, with a short welcome series that keeps you in mind while buyers are still months from deciding. Plus English reply templates for WhatsApp, for the first message and the follow-ups, so every enquiry gets a fast, consistent answer.</p></li>
+      <li><h3>The parts nobody sees</h3>
+        <p>The domain, hosting, contact forms that actually reach your inbox, a privacy notice that meets Thailand's data protection law (PDPA), a Google Business Profile, and the groundwork that lets Google and AI assistants like ChatGPT read your listings and recommend you.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <span class="kicker">For Nitiya</span>
+    <h2>Where your Claude subscription comes in</h2>
+    <p>Nitiya, I don't see your Claude subscription as competition. It's how you'll run this once it's built.</p>
+    <p>I'll set up a Claude project for you with everything already loaded: the brand voice, the buyers you're selling to, your five areas, and examples of finished listings. When a new property comes in, you give it the details and it drafts the listing description and the Facebook ad in the same voice as the rest of the site. You check it, add it to the spreadsheet, and it's live. I'll walk you through it on a call, and I'll stay with you until you're comfortable doing it on your own.</p>
+    <p>You also know the Thai side of this business far better than I do, so I'll want your eyes on everything before it goes live. The result is a system that doesn't depend on me, run by the two of you.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Who's building it</span>
+    <h2>Why me</h2>
+    <p>I've written direct-response copy for more than 40 years, for companies including Apple, IBM, Microsoft and Citibank. Campaigns I've written have tracked over $523 million in sales, including nine years of work for Belron, the company behind Safelite AutoGlass in the US.</p>
+    <p>These days I work with Claude too, alongside copywriting tools I've built for it and a library of proven sales material I've been putting together for years. That combination is what you can't buy with a subscription.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Later, if you want it</span>
+    <h2>What this doesn't include yet</h2>
+    <p>This proposal covers building the system. It doesn't cover running and managing your Facebook ad spend, a Thai-language version of the site, or ongoing testing to improve the ads and pages month by month. If the first ads work the way I expect, those are worth talking about. You don't need to decide anything about them now.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">Investment</span>
+    <h2>What this costs</h2>
+    <table class="price">
+      <thead><tr><th>What you get</th><th>Time</th><th>Investment</th></tr></thead>
+      <tbody>
+        <tr><td>The complete system: your live website, all the copy, a page for each listing ad, your first Facebook ads, tracking, follow-up, setup, and Nitiya's listing kit.</td><td>About 3 weeks</td><td class="amt">$3,000</td></tr>
+      </tbody>
+    </table>
+    <p class="lead-in">On my normal rate card a funnel build like this starts at $25,000. Peter's a friend, so for you it's $3,000.</p>
+    <p>It's a fixed price, paid up front, with one full round of revisions included. There's no hourly billing and there won't be any surprises. The three weeks start once I have the items below.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="kicker">To get started</span>
+    <h2>What I need from you</h2>
+    <ol>
+      <li><strong>Your first three listings:</strong> area, price, size, bedrooms and bathrooms, a few lines about each, and photos you have permission to use. These become your first ads and listing pages.</li>
+      <li><strong>Your LINE details,</strong> ideally a LINE Official Account, so the buttons open straight into a chat with you.</li>
+      <li><strong>Admin access to your Facebook page and Meta Business account.</strong> The tracking depends on it.</li>
+      <li><strong>Login details for wherever changingplacesrealty.com is registered,</strong> so I can point it at the new site.</li>
+      <li><strong>Who answers WhatsApp and LINE, and when.</strong> The reply templates are written around it.</li>
+      <li><strong>A few words from past clients in the US, if you have any.</strong> Trust is the hardest thing for a new agency to earn, and Peter's 22 years are the best proof you have.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p>You've got things most agencies in Pattaya don't: Peter's 22 years of doing this properly in America, a Thai partner at the heart of the business, and a clear picture of the buyer you want. What you don't have yet is a way to put that in front of the right people every week. That's very fixable, and this is the quickest way to do it.</p>
+
+    <h2 style="margin-top:2.2rem">Next steps</h2>
+    <ol>
+      <li>Talk it over together, and let me know if you'd like to go ahead.</li>
+      <li>Send me your billing details: business name, address and a contact email.</li>
+      <li>I'll send an online invoice, payable by credit card or Wise.</li>
+      <li>We'll book a kickoff call, the three of us, to go through the list above.</li>
+      <li>Once the invoice is paid and I have what I need, I'll start, and you'll be live in about three weeks.</li>
+    </ol>
+    <p class="lead-in">I'm happy to get on a call first if it would help.</p>
+
+    <div class="sig">
+      <p>Best wishes</p>
+      <p>Rob</p>
+      <p class="contact">Website: <a href="https://robpalmer.com">RobPalmer.com</a><br>
+      Email: <a href="mailto:rob@robpalmer.com">rob@robpalmer.com</a><br>
+      WhatsApp: <a href="https://wa.me/66958415182">+66 95 841 5182</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">Prepared for Peter and Nitiya Kelly, Changing Places Realty, Pattaya. <a href="./">See the demo site</a></div>
+</footer>
+
+<!-- pages-fresh:start -->
+<div id="pf-pill" data-build="20261015-151731" style="position:fixed;right:18px;bottom:18px;
+  z-index:2147483000;display:none;background:#FFC72C;color:#1a1708;font-weight:800;
+  font-size:14px;line-height:1;padding:13px 20px;border-radius:40px;cursor:pointer;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  box-shadow:0 8px 30px rgba(0,0,0,.45)">Updated &mdash; tap to reload</div>
+<script>
+(function(){
+  var el = document.getElementById('pf-pill');
+  if(!el) return;
+  var mine = el.getAttribute('data-build'), stale = false;
+  function check(){
+    fetch('version.json?t=' + Date.now(), {cache:'no-store'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(v){
+        if(!v || !v.build || v.build === mine) return;
+        stale = true;
+        if(document.visibilityState === 'visible') el.style.display = 'block';
+      })
+      .catch(function(){});
+  }
+  el.addEventListener('click', function(){ location.reload(); });
+  document.addEventListener('visibilitychange', function(){
+    if(document.visibilityState !== 'visible') return;
+    if(stale) location.reload();   // they just came back, so refreshing is safe
+    else check();
+  });
+  check();
+  setInterval(check, 120000);
+})();
+</script>
+<!-- pages-fresh:end -->
+</body>
+</html>
